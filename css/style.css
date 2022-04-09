@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(247, 244, 244);
+}
+
+@keyframes serdce {
+    100% {
+        margin-top: 100px;
+
+        transform: translateX(1000px);
+    }
+}
+
+.animation {
+    margin-top: 380px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(247, 244, 244);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.animation:hover {
+    opacity: 1;
+}
+
+.animation:hover .blok{
+    animation-name: serdce;
+}
+/* 
+.qiz {
+    margin-left: 1250px;
+} */
+
+.serdce::before,
+.serdce::after {
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50px 50px 0 0;
+    transition: 0.5s;
+    margin-top: 300px;
+}
+
+.serdce::before {
+    left: 103px;
+    transform: rotate(45deg);
+}
+
+.serdce::after {
+    left: 70px;
+    transform: rotate(-45deg);
+}
+
+.blok {
+    position: relative;
+    /* max-width: 1200px; */
+    width: 100%;
+    margin: 0 auto;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
